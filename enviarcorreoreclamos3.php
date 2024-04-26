@@ -4,19 +4,15 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-
 require "PHPMailer/src/PHPMailer.php";
 require "PHPMailer/src/Exception.php";
 require "PHPMailer/src/SMTP.php";
 //Load Composer's autoloader
 //require 'vendor/autoload.php';
-
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
-
 try {
     if(isset($_POST['enviar'])){
-
         
         
         $tipodocumento=$_POST['tipodocumento'];
@@ -45,7 +41,6 @@ try {
         $asunto=$detallepersona;
     
         //server 
-
          //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
@@ -57,8 +52,10 @@ try {
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`  ENCRYPTION_SMTPS
 
     //Recipients
+    $mail->setFrom('otomanix@gmail.com.pe', 'FORMULARIOS SUGERENCIAS O DENUNCIAS');
     $mail->setFrom('denuncias.grupotoshiko@gmail.com', 'FORMULARIOS SUGERENCIAS O DENUNCIAS');
-         // $mail->addAddress('fgutierrez@toshiko.com.pe', 'Jose User');      //Add a recipient 
+         // $mail->addAddress('jeusebio@toshiko.com.pe', 'Eduardo User');      //Add a recipient 
+    $mail->addAddress('otomanix@gmail.com.pe');      //Name is optional
     $mail->addAddress('denuncias.grupotoshiko@gmail.com');      //Name is optional
     $mail->addAddress('administracion@toshiko.com.pe');
     $mail->addAddress('cbaldeon@toshiko.com.pe');
@@ -68,11 +65,9 @@ try {
     //$mail->addReplyTo('info@example.com', 'Information');
     //$mail->addCC('cc@example.com');
    // $mail->addBCC('bcc@example.com');
-
     //Attachments
     //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
     //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject =$name;
@@ -96,21 +91,17 @@ try {
   </body>  
 </html>";
     $mail->AltBody = 'TEXTO non-HTML mail clients';
-
     $mail->send();
     
-     echo "<script>location.href='http://www.toshiko.com.pe/index.html';</script>";
+     echo "<script>location.href='https://portalgrupotoshiko.azurewebsites.net/';</script>";
 die();
     }
-
     
      else{
-         echo "<script>location.href='http://www.toshiko.com.pe/index.html';</script>";
+         echo "<script>location.href='https://portalgrupotoshiko.azurewebsites.net/';</script>";
 die();
      }
      
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
-
-?>
