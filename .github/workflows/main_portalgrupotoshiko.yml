@@ -49,7 +49,8 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: php-app
-
+      - name: Run Azure Login With a Service Principal Secret
+        uses: azure/login@v2
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         with:
