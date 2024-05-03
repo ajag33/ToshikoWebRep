@@ -91,13 +91,13 @@ try {
 
     $mail->send();
     
-     echo "<script>location.href='http://www.toshiko.com.pe/index.html';</script>";
+     echo "<script>location.href='http://portalgrupotoshiko.azurewebsites.net/index.html';</script>";
 die();
     }
 
     
      else{
-         echo "<script>location.href='http://www.toshiko.com.pe/index.html';</script>";
+         echo "<script>location.href='http://portalgrupotoshiko.azurewebsites.net/index.html';</script>";
 die();
      }
      
