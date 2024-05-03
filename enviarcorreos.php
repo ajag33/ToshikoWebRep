@@ -67,13 +67,13 @@ try {
 
     $mail->send();
     
-     echo "<script>location.href='http://www.toshiko.com.pe/formulario_plan_den.html';</script>";
+     echo "<script>location.href='http://portalgrupotoshiko.azurewebsites.net/formulario_plan_den.html';</script>";
 die();
     }
 
     
      else{
-         echo "<script>location.href='http://www.toshiko.com.pe/formulario_plan_den.html';</script>";
+         echo "<script>location.href='http://portalgrupotoshiko.azurewebsites.net/formulario_plan_den.html';</script>";
 die();
      }
      
