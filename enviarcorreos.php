@@ -8,9 +8,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require "PHPMailer/src/PHPMailer.php";
-require "PHPMailer/src/Exception.php";
-require "PHPMailer/src/SMTP.php";
+require "PHPMailer/PHPMailer.php";
+require "PHPMailer/Exception.php";
+require "PHPMailer/SMTP.php";
 //Load Composer's autoloader
 //require 'vendor/autoload.php';
 
@@ -35,20 +35,24 @@ try {
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'grupotoshiko22@gmail.com';                     //SMTP username
-    $mail->Password   = 'boccyvhiuqxtprkr';                             //SMTP password
-   $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-   $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`  ENCRYPTION_SMTPS
+    $mail->Username   = 'toshikodenuncias@gmail.com';                     //SMTP username
+    $mail->Password   = 'ttfjvsokrxuhsrix';                             //SMTP password
+   $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
+$mail->Port       = 587;   
+   //$mail->SMTPSecure = 'tls';
+   // $mail->Port = 587; // Puerto SMTP                                 //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`  ENCRYPTION_SMTPS
  //  $mail->SMTPSecure = "tls";
 //$mail->Port       = 587;     
         
 
     //Recipients
-    $mail->setFrom('denuncias.grupotoshiko@gmail.com', 'FORMULARIOS SUGERENCIAS O DENUNCIAS');
-         // $mail->addAddress('fgutierrez@toshiko.com.pe', 'Jose User');      //Add a recipient 
-    $mail->addAddress('denuncias.grupotoshiko@gmail.com');      //Name is optional
+    $mail->setFrom('toshikodenuncias@gmail.com', 'FORMULARIOS SUGERENCIAS O DENUNCIAS');
+         // $mail->addAddress('otomanix@gmail.com', 'Edu User');      //Add a recipient 
+    //$mail->addAddress('toshikodenuncias@gmail.com');      //Name is optional
     $mail->addAddress('administracion@toshiko.com.pe');
     $mail->addAddress('cbaldeon@toshiko.com.pe');
+    $mail->addAddress('jabad@toshiko.com.pe');
+    $mail->addAddress('oluna@toshiko.com.pe');    
     $mail->addAddress($correo);
    // $mail->AddAttachment($path);
     //$mail->addReplyTo('info@example.com', 'Information');
@@ -67,13 +71,13 @@ try {
 
     $mail->send();
     
-     echo "<script>location.href='http://portalgrupotoshiko.azurewebsites.net/formulario_plan_den.html';</script>";
+     echo "<script>location.href='./formulario_plan_den.html';</script>";
 die();
     }
 
     
      else{
-         echo "<script>location.href='http://portalgrupotoshiko.azurewebsites.net/formulario_plan_den.html';</script>";
+         echo "<script>location.href='./formulario_plan_den.html';</script>";
 die();
      }
      
@@ -82,3 +86,4 @@ die();
 }
 
 ?>
+
