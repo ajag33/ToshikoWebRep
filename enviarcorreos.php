@@ -52,6 +52,7 @@ try {
     $mail->Password   = 'boccyvhiuqxtprkr';                              //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;  
+        //hoy
         
 
     //Recipients
